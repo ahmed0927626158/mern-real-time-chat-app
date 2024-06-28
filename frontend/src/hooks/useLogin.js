@@ -11,7 +11,7 @@ const  useLogin=()=>{
     try 
     {
         console.log(username,password)
-        const response=await fetch("/api/auth/login",{
+        const response=await fetch("https://mern-chat-app-server-lovat.vercel.app/api/auth",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({username,password})
