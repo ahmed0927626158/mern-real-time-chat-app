@@ -14,7 +14,7 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 // Middlewares
 app.use(cors(
   {
-    origin:"https://frontends-seven.vercel.app",
+    origin:"https://mern-chat-app-client-kappa.vercel.app",
     methods:["POST","GET","DELETE","PATCH","PUT"]
   }
 ));
