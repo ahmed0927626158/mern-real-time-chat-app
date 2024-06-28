@@ -23,7 +23,7 @@ app.use("/api/users", userRoute);
 
 
 
-server.listen(process.env.PORT, () => {
+server.listen(5000, () => {
   connectToMongoDB();
   
 
