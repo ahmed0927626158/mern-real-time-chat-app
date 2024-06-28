@@ -12,7 +12,10 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 
 
 // Middlewares
-app.use(cors({origin:["https://mern-chat-app-client-kappa.vercel.app/"]
+app.use(cors(
+  {origin:["https://mern-chat-app-client-kappa.vercel.app/"],
+   methods:["POST","GET"],
+   credentials:true
              }));
 app.use(express.json());
 app.use(cookieParser());
