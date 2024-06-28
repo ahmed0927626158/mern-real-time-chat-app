@@ -11,7 +11,7 @@ const success=handleError({fullName,username,password,confirm,gender,phone})
 if(!success) return;
 setLoading(true)
 try {
-    const response=await fetch("/api/auth/signup/",{
+    const response=await fetch("https://mern-chat-app-server-lovat.vercel.app/api/auth/signup",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({fullName,username,password,confirm,gender,phone})
