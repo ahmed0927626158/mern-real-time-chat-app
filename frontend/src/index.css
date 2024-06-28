@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body{
+  background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)),url("../public/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+}
+
+/* Dark mode looking for dark */
+::-webkit-scrollbar{
+    cursor: pointer;
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    cursor: pointer;
+    background: #555;
+}
+::-webkit-scrollbar-thumb{
+    background: #121212;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #242424;
+}
+
+@media screen and (max-width:600px)
+{
+    .search-btn{
+        width: 30px;
+       
+        border-radius: 50%;
+    }
+    .search{
+        width: 120px;
+       
+    }
+    .search-form{
+       gap: 1px;
+    }
+    .left-side{
+        width: 180px;
+        background-color: red;
+    }
+    .right-side{
+        flex:2;
+    }
+    .profile-pic{
+        width: 30px;
+    }
+    
+}
