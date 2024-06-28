@@ -15,7 +15,7 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 app.use(cors(
   {
     origin:"https://frontends-seven.vercel.app",
-    methods:["POST","GET"]
+    methods:["POST","GET","DELETE","PATCH","PUT"]
   }
 ));
 app.use(express.json());
