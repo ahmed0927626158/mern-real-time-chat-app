@@ -22,7 +22,7 @@ const  useLogin=()=>{
         console.log(username,password)
         const response=await fetch("https://mern-chat-app-server-lovat.vercel.app/api/auth/login/",{
             method:"POST",
-            headers:headers,
+            headers:{"Content-Type":"application/json"},
             body:JSON.stringify({username,password})
         })
         const data=await response.json()
