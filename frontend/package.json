@@ -1,4 +1,4 @@
-{ "proxy":"https://server-backend-six.vercel.app/:5000",
+{ "proxy":"https://mern-chat-app-server-lovat.vercel.app/",
   "name": "front",
   "version": "0.1.0",
   "private": true,
