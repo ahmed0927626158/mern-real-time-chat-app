@@ -10,10 +10,19 @@ const  useLogin=()=>{
     setLoading(true)
     try 
     {
+      let headers = new Headers();
+
+  headers.append('Content-Type', 'application/json');
+  headers.append('Accept', 'application/json');
+
+  headers.append('Access-Control-Allow-Origin', 'https://mern-chat-app-client-kappa.vercel.app');
+  headers.append('Access-Control-Allow-Credentials', 'true');
+
+  headers.append('GET', 'POST', 'OPTIONS');
         console.log(username,password)
         const response=await fetch("https://mern-chat-app-server-lovat.vercel.app/api/auth/login/",{
             method:"POST",
-            headers:{"Content-Type":"application/json"},
+            headers:headers,
             body:JSON.stringify({username,password})
         })
         const data=await response.json()
