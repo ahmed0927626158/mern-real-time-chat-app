@@ -12,7 +12,8 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 
 
 // Middlewares
-app.use(cors({origin:"https://mern-chat-app-client-git-master-ahmeds-projects-9985ac0b.vercel.app"}));
+app.use(cors({origin:["https://mern-chat-app-client-git-master-ahmeds-projects-9985ac0b.vercel.app/"]
+             }));
 app.use(express.json());
 app.use(cookieParser());
 
