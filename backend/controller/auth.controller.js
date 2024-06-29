@@ -51,6 +51,7 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
+   return res.status(400).json({ error: "Invalid credentials" });
   try {
     const { username, password } = req.body;
   
