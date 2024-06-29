@@ -1,24 +1,21 @@
 {
-    "version":2,
-    "builds":[
-        {
-            "src":"./index.js",
-            "use":"@vercel/node"
-        }
-    ],
-    "routes":[
-        {
-            "src":"/(.*)",
-            "dest":"/",
-        
-    
-      "headers": [
+  "version": 2,
+  "builds": [
     {
-      "key": "Access-Control-Allow-Origin",
-      "value": "https://mern-chat-app-client-kappa.vercel.app"
+      "src": "./index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://mern-chat-app-client-kappa.vercel.app"
+        }
+      ]
     }
   ]
-        }
-    ]
-
 }
