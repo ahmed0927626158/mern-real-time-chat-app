@@ -11,7 +11,7 @@ export const SocketContextProvider=({children})=>{
     const {authUser}=useAuthContex();
     useEffect(()=>{
         if(authUser){
-            const socket=io("http://localhost:5000",{
+            const socket=io("https://mern-chat-app-server-lovat.vercel.app",{
                 query:{
                     userId:authUser.id
                 }
