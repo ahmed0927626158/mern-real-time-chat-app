@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import jwt from "jsonwebtoken"
 import generatToken from "../utils/generateToken.js";
 export const signup = async (req, res) => {
   try {
@@ -69,7 +70,12 @@ export const login = async (req, res) => {
     }
     //generate token for cookie
 
-    generatToken(user._id, res);
+ const token = jwt.sign( user._id,process.env.SECRET_KEY, { expiresIn: "1d" });
+  res.cookie("jwt", token, {
+    maxAge: 3 * 24 * 60 * 60 * 1000,
+    httpOnly: true, //prevent XSS attacks cros-site scripting attacks
+    sameSite: "strict", // CSRF attack cross-site request forgery
+  });
 
     return res.status(200).json({
       id: user._id,
