@@ -9,7 +9,7 @@ const  useSendMessages=()=>
         setLoading(true)
         try {
             console.log(selectedConversation._id)
-            const response=await fetch(`/api/messages/send/${selectedConversation._id}`,{
+            const response=await fetch(`https://mern-chat-app-server-lovat.vercel.app/api/messages/send/${selectedConversation._id}`,{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({message})
