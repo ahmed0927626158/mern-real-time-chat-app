@@ -52,7 +52,7 @@ export const signup = async (req, res) => {
 
 export const login = async (req, res) => {
    const { username, password } = req.body;
-   return res.status(400).json({ error: "Invalid credentials","username": username });
+  
   try {
    
   
