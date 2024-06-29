@@ -10,9 +10,6 @@ const  useLogin=()=>{
     setLoading(true)
     try 
     {
-      
-
-
         console.log(username,password)
         const response=await fetch("https://mern-chat-app-server-lovat.vercel.app/api/auth/login/",{
             method:"POST",
