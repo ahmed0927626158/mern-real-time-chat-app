@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.post("/signup", signup);
 router.get("/test",(req,res)=>{
-  res.send("Hello")
+  res.send(process.env.SECRET_KEY)
 })
 router.post("/login", login);
 
