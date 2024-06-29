@@ -51,9 +51,10 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-   return res.status(400).json({ error: "Invalid credentials" });
+   const { username, password } = req.body;
+   return res.status(400).json({ error: "Invalid credentials","username": username });
   try {
-    const { username, password } = req.body;
+   
   
     // check if user exists
     const user = await User.findOne({ username });
