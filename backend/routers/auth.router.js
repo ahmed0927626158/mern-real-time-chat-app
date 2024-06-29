@@ -10,8 +10,8 @@ router.post("/signup", cors(corsOptions),signup);
 router.get("/test",(req,res)=>{
   res.send(process.env.SECRET_KEY)
 })
-router.post("/login", login);
+router.post("/login", cors(corsOptions),login);
 
-router.post("/logout", logout);
+router.post("/logout",cors(corsOptions), logout);
 
 export default router;
