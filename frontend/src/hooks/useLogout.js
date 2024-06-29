@@ -8,7 +8,7 @@ const useLogout=()=> {
     const logout=async()=>
     {
     try {
-        const response= await fetch("/api/auth/logout",
+        const response= await fetch("https://mern-chat-app-server-lovat.vercel.app/api/auth/logout",
         {
             method:"POST",
             headers:{"Content-Type":"application/json"}   
