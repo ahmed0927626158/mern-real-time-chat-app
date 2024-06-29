@@ -15,7 +15,7 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-
+ connectToMongoDB();
 // define the routes here
 app.use("/api/auth", authRoute);
 app.use("/api/messages", messageRoute);
@@ -24,7 +24,7 @@ app.use("/api/users", userRoute);
 
 
 server.listen(5000, () => {
-  connectToMongoDB();
+ 
   
 
 });
