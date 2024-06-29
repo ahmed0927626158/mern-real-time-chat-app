@@ -10,14 +10,15 @@
         {
             "src":"/(.*)",
             "dest":"/"
-        }
-    ],
-    {
+        
+    
       "headers": [
     {
       "key": "Access-Control-Allow-Origin",
       "value": "https://mern-chat-app-client-kappa.vercel.app"
     }
   ]
-}
+        }
+    ]
+
 }
