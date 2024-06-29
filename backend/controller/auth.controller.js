@@ -47,7 +47,7 @@ export const signup = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ error: "Internal server error","message":error });
   }
 };
 
@@ -85,7 +85,7 @@ export const login = async (req, res) => {
       profilePic: user.profilePic,
     });
   } catch (error) {
-    return res.status(500).json({ error: "Internal server Error" });
+    return res.status(500).json({ error: "Internal server Error","message":error });
   }
 };
 
@@ -94,6 +94,6 @@ export const logout = async (req, res) => {
     res.clearCookie("jwt");
     return res.status(200).json({ message: "Lout successfull" });
   } catch (error) {
-    return res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ error: "Internal server error","message":error });
   }
 };
