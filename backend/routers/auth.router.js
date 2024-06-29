@@ -6,12 +6,12 @@ var corsOptions = {
   origin: 'https://mern-chat-app-client-kappa.vercel.app',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
-router.post("/signup", cors(corsOptions),signup);
+router.post("/signup",signup);
 router.get("/test",(req,res)=>{
   res.send(process.env.SECRET_KEY)
 })
-router.post("/login", cors(corsOptions),login);
+router.post("/login",login);
 
-router.post("/logout",cors(corsOptions), logout);
+router.post("/logout",logout);
 
 export default router;
