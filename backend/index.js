@@ -20,10 +20,7 @@ app.use(cookieParser());
 app.use("/api/auth", authRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/users", userRoute);
-app.get("/",(req,res)=>{
-  
-  res.send("<h3>Hello World"</h3>")
-})
+
 
 
 server.listen(5000, () => {
