@@ -55,8 +55,6 @@ export const login = async (req, res) => {
    const { username, password } = req.body;
   
   try {
-   
-  
     // check if user exists
     const user = await User.findOne({ username });
    
