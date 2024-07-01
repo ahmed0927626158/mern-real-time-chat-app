@@ -16,7 +16,7 @@ export const SocketContextProvider=({children})=>{
                 query:{
                     userId:authUser.id
                 },
-                 withCredentials: true 
+                 credentials:'include' 
             });
             setSocket(socket);
             socket.on("getOnlineUsers",(users)=>{
