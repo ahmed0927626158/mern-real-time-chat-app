@@ -67,6 +67,7 @@ export const login = async (req, res) => {
       return res.status(400).json({ error: "Invalid credentials" });
     }
     generatToken(user._id, res);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
 
 
     return res.status(200).json({
