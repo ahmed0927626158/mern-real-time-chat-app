@@ -11,7 +11,8 @@ const useLogout=()=> {
         const response= await fetch("https://mern-chat-app-server-lovat.vercel.app/api/auth/logout",
         {
             method:"POST",
-            headers:{"Content-Type":"application/json"}   
+            headers:{"Content-Type":"application/json"},
+            credentials:'include'
         })
         const data=await response.json()
         if(data.error){
