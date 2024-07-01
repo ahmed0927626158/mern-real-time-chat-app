@@ -68,7 +68,11 @@ export const login = async (req, res) => {
     }
       // generatToken(user._id, res);
     const token = jwt.sign(user_id, process.env.SECRET_KEY, { expiresIn: "1d" });
-    res.setHeader("Set-Cookie", `jwt=${token}; Max-Age=${3 * 24 * 60 * 60 * 1000}; HttpOnly; SameSite=None; Secure; Path=/`);
+    res.cookie("jwt", token, {
+    maxAge: 3 * 24 * 60 * 60 * 1000,
+    httpOnly: true, //prevent XSS attacks cros-site scripting attacks
+    sameSite: "none", // CSRF attack cross-site request forgery
+  });
 
     return res.status(200).json({
       id: user._id,
