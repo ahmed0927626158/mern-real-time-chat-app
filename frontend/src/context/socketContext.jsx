@@ -11,10 +11,12 @@ export const SocketContextProvider=({children})=>{
     const {authUser}=useAuthContex();
     useEffect(()=>{
         if(authUser){
-            const socket=io("https://mern-chat-app-server-lovat.vercel.app",{
+            const socket=io("https://mern-chat-app-server-lovat.vercel.app",
+               {
                 query:{
                     userId:authUser.id
-                }
+                },
+                 withCredentials: true 
             });
             setSocket(socket);
             socket.on("getOnlineUsers",(users)=>{
