@@ -9,8 +9,8 @@ const server =http.createServer(app)
 const io= new Server(server,{
     cors:{
         origin:['https://mern-chat-app-client-kappa.vercel.app'],
-        methods:["GET","POST"],
-        credentials:true
+        methods:["GET","POST"]
+       
 }
 })
 
