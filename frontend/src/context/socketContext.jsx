@@ -16,6 +16,7 @@ export const SocketContextProvider=({children})=>{
                 query:{
                     userId:authUser.id
                 },
+                credentials:'include' 
 
             });
             setSocket(socket);
