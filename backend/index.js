@@ -9,7 +9,11 @@ import messageRoute from "./routers/message.router.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
 
-
+app.use(cors({
+   origin: 'https://mern-chat-app-client-kappa.vercel.app',
+    credentials: true
+}
+));
 
 // Middlewares
 
