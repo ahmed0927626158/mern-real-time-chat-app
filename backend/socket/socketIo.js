@@ -8,7 +8,7 @@ const app=express()
 const proxy = httpProxy.createProxyServer();
 const server =http.createServer(app,(req, res) => {
   // Proxy the request to the Socket.IO server
-  proxy.web(req, res, { target: 'https://mern-chat-app-client-kappa.vercel.app' });
+  proxy.web(req, res, { target: 'https://mern-chat-app-client-kappa.vercel.app/' });
 })
 const io= new Server(server)
 
