@@ -1,17 +1,18 @@
 import {Server} from "socket.io"
 import http from 'http'
 import express from 'express'
-const httpProxy = require('http-proxy');
+
 
 
 const app=express()
-const proxy = httpProxy.createProxyServer();
-const server =http.createServer(app,(req, res) => {
-  // Proxy the request to the Socket.IO server
-  proxy.web(req, res, { target: 'https://mern-chat-app-client-kappa.vercel.app/',
-                      credentials:true});
+
+const server =http.createServer(app)
+const io= new Server(server,{
+    cors:{
+        origin:['https://mern-chat-app-client-kappa.vercel.app'],
+        methods:["GET","POST"]
+}
 })
-const io= new Server(server)
 
 const userSocketMap={}
 io.on("connection",(socket)=>{
