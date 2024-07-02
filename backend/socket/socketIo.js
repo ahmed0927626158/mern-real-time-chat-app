@@ -4,15 +4,14 @@ import express from 'express'
 
 
 const app=express()
+app.use(cors({
+   origin: 'https://mern-chat-app-client-kappa.vercel.app',
+  credentials: true
+}
+));
 
 const server =http.createServer(app)
-const io= new Server(server,{
-    cors:{
-        origin:['https://mern-chat-app-client-kappa.vercel.app'],
-        methods:["POST","GET","PUT","DELETE","PATCH","OPTIONS"],
-        credentials:true
-    }
-})
+const io= new Server(server)
 
 const userSocketMap={}
 io.on("connection",(socket)=>{
